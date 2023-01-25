@@ -1,0 +1,28 @@
+use anomaly_ts_gc.nc
+use anomaly_ts_sah.nc
+use anomaly_ts_sav.nc
+cancel mode logo
+set window/new
+set view ul
+plot/title="MIROC6-SSP585: Guinea Coast<nl>Temperature (C) Trend"/color=red ts[d=1]
+let p=t[gt=ts]
+let q=ts
+go regresst
+let Linear=qhat
+plot/over/color=green Linear
+set view ll
+plot/title="MIROC6-SSP585: Sahel<nl>Temperature (C) Trend"/color=red ts[d=2]
+let p=t[gt=ts]
+let q=ts
+go regresst
+let Linear=qhat
+plot/over/color=green Linear
+set view lr
+plot/title="MIROC6-SSP585: Savannah<nl>Temperature (C) Trend"/color=red ts[d=3]
+let p=t[gt=ts]
+let q=ts
+go regresst
+let Linear=qhat
+plot/over/color=green Linear
+frame/file=trend_temperature_MIROC6.gif
+q

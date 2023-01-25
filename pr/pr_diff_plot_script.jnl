@@ -1,0 +1,13 @@
+use pr_diff_2030-2059_1981-2010.nc
+use pr_diff_2070-2099_1981-2010.nc
+cancel mode logo
+set window/new
+set window/asp=0.5
+set view left
+fill/nokey/lev=(-13,17,1)/title="MIROC6-SSP585: Difference of Rainfall (mm day-1)<nl>(2030-2059 Minus 1981-2010)"/palet=orange_blue pr[d=1]/86400
+go land 1 "" 1
+set view right
+fill/lev=(-13,17,1)/title="MIROC6-SSP585: Difference of Rainfall (mm day-1)<nl>(2070-2099 Minus 1981-2010)"/palet=orange_blue pr[d=2]/86400
+go land 1 "" 1
+frame/file=diff_rainfall_MIROC6.gif
+q

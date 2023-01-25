@@ -1,0 +1,28 @@
+use anomaly_pr_gc.nc
+use anomaly_pr_sah.nc
+use anomaly_pr_sav.nc
+cancel mode logo
+set window/new
+set view ul
+plot/title="MIROC6-SSP585: Guinea Coast<nl>Rainfall (mm day-1) Trend"/color=red pr[d=1]
+let p=t[gt=pr]
+let q=pr
+go regresst
+let Linear=qhat
+plot/over/color=green Linear
+set view ll
+plot/title="MIROC6-SSP585: Sahel<nl>Rainfall (mm day-1) Trend"/color=red pr[d=2]
+let p=t[gt=pr]
+let q=pr
+go regresst
+let Linear=qhat
+plot/over/color=green Linear
+set view lr
+plot/title="MIROC6-SSP585: Savannah<nl>Rainfall (mm day-1) Trend"/color=red pr[d=3]
+let p=t[gt=pr]
+let q=pr
+go regresst
+let Linear=qhat
+plot/over/color=green Linear
+frame/file=trend_rainfall_MIROC6.gif
+q

@@ -1,0 +1,16 @@
+use pr_Amon_MIROC6_historical_r1i1p1f1_gn_1951-2014_remap_clim.nc
+use pr_Amon_MIROC6_ssp585_r1i1p1f1_gn_2015-2099_remap_clim_near_future.nc
+use pr_Amon_MIROC6_ssp585_r1i1p1f1_gn_2015-2099_remap_clim_future.nc
+cancel mode logo
+set window/new
+set view ul
+fill/lev=(0,130,10)/title="MIROC6-SSP585: Mean<nl>Rainfall (mm day-1) HISTORICAL (1981-2010)"/palet=orange_blue pr[d=1]/86400
+go land 1 "" 1
+set view ll
+fill/NOKEY/lev=(0,130,10)/title="MIROC6-SSP585: Mean<nl>Rainfall (mm day-1) NEAR FUTURE (2030-2059)"/palet=orange_blue pr[d=2]/86400
+go land 1 "" 1
+set view lr
+fill/lev=(0,130,10)/title="MIROC6-SSP585: Mean<nl>Rainfall (mm day-1) NEAR FUTURE (2070-2099)"/palet=orange_blue pr[d=3]/86400
+go land 1 "" 1
+frame/file=mean_rainfall_MIROC6.gif
+q
